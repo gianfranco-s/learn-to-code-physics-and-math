@@ -1,42 +1,92 @@
 '''
-Generar la gráfica de
-* sin(t)
+Plot the velocity of a car whose position is
+x(t) = t^3
 '''
 
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Initialise the subplot function using number of rows and columns
+figure, axis = plt.subplots(1, 3)
 
-# Generar un arreglo desde 0 hasta 10, en pasos de 0.1
-time = np.arange(0, 10, 0.1);
+# Generate array from 0 to 4, with step of 0.1
+time = np.arange(0, 4, 0.1)
 
-# O bien, generar un arreglo desde 0 hasta 10, con 10 elementos.
-# time = np.linspace(0.,10.,10)
+# Evaluate the position as a function of time
+position_eq = lambda t: t**3
+position = position_eq(time)
 
-# Tomar el seno del arreglo anterior
-fun01   = np.sin(time)
+# Create tangential lines, evaluated in ta and tb = ta + dt
+ta = 2.0
 
-# Generar el objeto "plot", que utiliza el método plot()
-# Esta línea, por sí misma, no da un resultado.
-plt.plot(time, fun01)
+# -------------------------- Velocity with dt = 1.0 -------------------------
+dt = 1.0
+tb = ta + dt
 
-# Mostrar la gráfica (se abrirá una ventana)
-# plot.show()
+xa = position_eq(ta)
+xb = position_eq(tb)
 
-# Agregar un título al objeto plot, con el método title()
-plt.title('Función sinusoidal')
+v = (xb - xa) / (tb - ta)
+velocity_eq = lambda t: v*(t-ta) + xa
+velocity = velocity_eq(time)
 
-# Etiquetas de los ejes
-plt.xlabel('Tiempo (s)')
-plt.ylabel('Amplitud')
+# Generate "plt" object using plot() method, and add title.
+axis[0].plot(time, position,'b-',linewidth=1)
+axis[0].plot(time, velocity,'r--',linewidth=1)
+axis[0].plot(ta, xa,'rs',fillstyle='none',markersize=12)
+axis[0].plot(tb, xb,'ro',fillstyle='none',markersize=10)
 
-# Activar la grilla
-# plt.grid(True)
+# Set limits for axis. If not using "plt.xlim(...)" notation, use axis[].set_...
+axis[0].set_xlim(0,max(time))
+axis[0].set_ylim(0,max(position))
+axis[0].set_title(f'dt = {tb} - {ta}')
 
-# Mostrar líneas horizontal y vertical
-plt.axhline(y=0, color='k',ls=':')
-plt.axvline(x=0, color='k',ls=':')
+# -------------------------- Velocity with dt = 0.5 -------------------------
+dt = 0.5
+tb = ta + dt
 
+xa = position_eq(ta)
+xb = position_eq(tb)
 
-# Mostrar la gráfica
+v = (xb - xa) / (tb - ta)
+velocity_eq = lambda t: v*(t-ta) + xa
+velocity = velocity_eq(time)
+
+# Generate "plt" object using plot() method, and add title.
+axis[1].plot(time, position,'b-',linewidth=1)
+axis[1].plot(time, velocity,'r--',linewidth=1)
+axis[1].plot(ta, xa,'rs',fillstyle='none',markersize=12)
+axis[1].plot(tb, xb,'ro',fillstyle='none',markersize=10)
+
+# Set limits for axis. If not using "plt.xlim(...)" notation, use axis[].set_...
+axis[1].set_xlim(0,max(time))
+axis[1].set_ylim(0,max(position))
+axis[1].set_title(f'dt = {tb} - {ta}')
+
+# -------------------------- Velocity with dt = 0.1 -------------------------
+dt = 0.01
+tb = ta + dt
+
+xa = position_eq(ta)
+xb = position_eq(tb)
+
+v = (xb - xa) / (tb - ta)
+velocity_eq = lambda t: v*(t-ta) + xa
+velocity = velocity_eq(time)
+
+# Generate "plt" object using plot() method, and add title.
+axis[2].plot(time, position,'b-',linewidth=1)
+axis[2].plot(time, velocity,'r--',linewidth=1)
+axis[2].plot(ta, xa,'rs',fillstyle='none',markersize=12)
+axis[2].plot(tb, xb,'ro',fillstyle='none',markersize=10)
+
+# Set limits for axis. If not using "plt.xlim(...)" notation, use axis[].set_...
+axis[2].set_xlim(0,max(time))
+axis[2].set_ylim(0,max(position))
+axis[2].set_title(f'dt = {tb} - {ta}')
+
+# Save figure
+plt.savefig('fig_derivative.png')
+
+# Combine all the operations and display
 plt.show()
