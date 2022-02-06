@@ -86,7 +86,7 @@ axis[2].set_ylim(0,max(position))
 axis[2].set_title(f'dt = {tb} - {ta}')
 
 # Save figure
-plt.savefig('fig_derivative.png')
+plt.savefig('img/fig_derivative.png')
 
 # Combine all the operations and display
 plt.show()
