@@ -61,11 +61,14 @@ plt.xticks(lista_de_ticks,lista_de_etiquetas)
 
 
 # Guardar imagen en varios formatos
-save_title = '/home/gsalomone/Documents/Learning/learn-to-code-physics-and-math/img/sine'
-plt.savefig(save_title+'.png')
-plt.savefig(save_title+'_transparent.png',transparent=True)
-plt.savefig(save_title+'_vector.svg')
-plt.savefig(save_title+'_vector_transparente.svg',transparent=True)
+import os
+save_path = os.path.dirname(os.path.abspath(__file__)) + '/img/'
+os.mkdir(save_path)
+
+plt.savefig(save_path+'sine.png')
+plt.savefig(save_path+'sine_transparent.png',transparent=True)
+plt.savefig(save_path+'sine_vector.svg')
+plt.savefig(save_path+'sine_vector_transparente.svg',transparent=True)
 
 # Mostrar la gráfica (se abrirá una ventana)
 plt.show()

@@ -36,9 +36,10 @@ You've seen this expression in every calculus book. We won't get into the math o
 
 
 
-## 3. Analytic vs Numerical derivatives
+## 3. Analytic vs Numerical vs Symbolic derivatives
 So you learned that the derivative of x^2 is 2x. How is that of any use in Physics? Sometimes, when the system under study is sufficiently simple, you'll be able to evaluate the equations of motion. When the system is complex, the mathematical principles still hold, only you won't be able to evaluate them.
-However magical, calculations made by software need you to define that *dt* -time differential, which mathematicians so mysteriously define.
+
+However magical, calculations made by software need you to define that *dt* -time differential, which mathematicians so mysteriously allude.
 
 Let's say we want to calculate the derivative of the function
 ```
@@ -57,4 +58,17 @@ f'(t) = (approx) [ f(t+dt) - f(t) ] / dt
 
 This becomes truer, the tinier *dt* gets -effectively arriving to the deffinition of a mathematical limit.
 
-Let's plot both functions, the analytical derivative (we might call it the "true" derivative), and the numerical derivative (we'll call this one, the "approximate" derivative).
+**But what about symbolic derivatives?** you might be asking your self. We're getting there.
+
+They correspond to a method of computing derivatives by telling the software the rules it needs to find the final result. What the software would then effectively do, is find `f'(t)`. As we said earlier, this works for simple systems, just like the analytic method.
+
+To sum up, we have the
+* TRUE derivative, given to us by Calculus.
+* APPROXIMATE derivative, calculated over some discrete interval `dt`
+* SYMBOLIC derivative, which should be exactly the same as the TRUE derivative. The only difference would lie in that **we don't have to calculate it**
+
+So, let's plot these three functions. We'll use a *tru_time* array, to plot the continuous time derivative (the TRUE one), and a *dsc_time* array to plot the other two.
+
+[PLOTS GO HERE]
+
+Note that the yellow dots **always** fall over the true derivative, while the red circles *converge* to it.

@@ -2,7 +2,7 @@
 Plot the velocity of a car whose position is
 x(t) = t^3
 
-Let's loops...
+Let's use loops...
 '''
 
 import numpy as np

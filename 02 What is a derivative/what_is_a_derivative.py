@@ -3,6 +3,7 @@ Plot the velocity of a car whose position is
 x(t) = t^3
 '''
 
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -86,7 +87,9 @@ axis[2].set_ylim(0,max(position))
 axis[2].set_title(f'dt = {tb} - {ta}')
 
 # Save figure
-plt.savefig('img/fig_derivative.png')
+save_path = os.path.dirname(os.path.abspath(__file__)) + '/img/'
+os.mkdir(save_path)
+plt.savefig(save_path + '/ffig_derivative.png')
 
 # Combine all the operations and display
 plt.show()
