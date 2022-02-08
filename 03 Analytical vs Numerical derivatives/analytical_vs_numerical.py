@@ -50,7 +50,10 @@ plt.legend(['Analytical derivative, over continuous time',\
             'Symbolic derivative, over discrete time'])
 
 save_path = os.path.dirname(os.path.abspath(__file__)) + '/img/'
-os.mkdir(save_path)
-plt.savefig(save_path + '/fig_derivatives_comparison.png')
-plt.show()
 
+if not os.path.isdir(save_path):
+    os.mkdir(save_path)
+
+figure_name = 'fig_derivatives_comparison.png'
+plt.savefig(save_path + figure_name)
+plt.show()

@@ -7,6 +7,7 @@ Generar las gráficas de
 En un periodo de la señal de menor frecuencia, en una misma gráfica.
 '''
 
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 import math
@@ -61,9 +62,10 @@ plt.xticks(lista_de_ticks,lista_de_etiquetas)
 
 
 # Guardar imagen en varios formatos
-import os
 save_path = os.path.dirname(os.path.abspath(__file__)) + '/img/'
-os.mkdir(save_path)
+
+if not os.path.isdir(save_path):
+    os.mkdir(save_path)
 
 plt.savefig(save_path+'sine.png')
 plt.savefig(save_path+'sine_transparent.png',transparent=True)

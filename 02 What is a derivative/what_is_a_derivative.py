@@ -88,8 +88,11 @@ axis[2].set_title(f'dt = {tb} - {ta}')
 
 # Save figure
 save_path = os.path.dirname(os.path.abspath(__file__)) + '/img/'
-os.mkdir(save_path)
-plt.savefig(save_path + '/ffig_derivative.png')
+
+if not os.path.isdir(save_path):
+    os.mkdir(save_path)
+
+plt.savefig(save_path + 'fig_derivative.png')
 
 # Combine all the operations and display
 plt.show()
