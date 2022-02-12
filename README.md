@@ -36,7 +36,7 @@ You've seen this expression in every calculus book. We won't get into the math o
 
 
 
-## 3. Analytic vs Numerical vs Symbolic derivatives
+## 3. Analytical vs Numerical vs Symbolic derivatives
 So you learned that the derivative of x^2 is 2x. How is that of any use in Physics? Sometimes, when the system under study is sufficiently simple, you'll be able to evaluate the equations of motion. When the system is complex, the mathematical principles still hold, only you won't be able to evaluate them.
 
 However magical, calculations made by software need you to define that *dt* -time differential, which mathematicians so mysteriously allude.
@@ -72,3 +72,21 @@ So, let's plot these three functions. We'll use a *tru_time* array, to plot the 
 [PLOTS GO HERE]
 
 Note that the yellow dots **always** fall over the true derivative, while the red circles *converge* to it.
+
+
+## 4. Integrals
+Now that we've become master derivators, let's tackle another calculus friend: the integral.
+```
+f(x) = 1 + x^2
+```
+We'll evaluate this function's integral in the interval [0,5], while comparing all three methods from before: analytical, numerical and symbolic.
+
+Let's first perform the analytical integration.
+```
+F(x) = integral{ 1 + x^2 } = x + (1/3) x^3
+```
+When evaluating between the upper and lower limits we get
+```
+true_area = 140/3 =(aprox) 46.666667
+```
+

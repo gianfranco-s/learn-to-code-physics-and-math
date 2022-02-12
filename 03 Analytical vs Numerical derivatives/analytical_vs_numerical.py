@@ -36,8 +36,8 @@ df_apx_data = np.diff(f_data) / dt     # np.diff(a) calculates the difference be
 
 # Calculate the symbolic derivative and evaluate it over time_apx
 t = sy.symbols('t', real = True)
-f_sym = sy.exp(-2*t) * sy.sin(10*t-6)               # Finds the symbolic derivative
-df_sym = sy.lambdify(t,sy.diff(f_sym,t),"numpy")    # Converts it to a lambda function
+f_sym = sy.exp(-2*t) * sy.sin(10*t-6)               # Defines the symbolic equation
+df_sym = sy.lambdify(t,sy.diff(f_sym,t),"numpy")    # Finds the symbolic derivative and converts it to a lambda function
 df_sym_data = df_sym(dsc_time)
 
 plt.plot(tru_time,df_tru_data)
