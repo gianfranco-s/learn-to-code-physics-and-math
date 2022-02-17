@@ -11,7 +11,7 @@ Many universities nowadays utilize MATLAB (or its open source counterpart, Octav
 ## 1. Let's plot a sine wave
 
 
-## 2. Do you know what a derivative is?
+## 1. Do you know what a derivative is?
 You might be thinking about a weird calculus limit. That's okay, but let's get the Physics angle. Supose a car's position is described as
 ```
 x(t) = t^3
@@ -36,7 +36,7 @@ You've seen this expression in every calculus book. We won't get into the math o
 
 
 
-## 3. Analytical vs Numerical vs Symbolic derivatives
+## 1. Analytical vs Numerical vs Symbolic derivatives
 So you learned that the derivative of x^2 is 2x. How is that of any use in Physics? Sometimes, when the system under study is sufficiently simple, you'll be able to evaluate the equations of motion. When the system is complex, the mathematical principles still hold, only you won't be able to evaluate them.
 
 However magical, calculations made by software need you to define that *dt* -time differential, which mathematicians so mysteriously allude.
@@ -74,7 +74,7 @@ So, let's plot these three functions. We'll use a *tru_time* array, to plot the 
 Note that the yellow dots **always** fall over the true derivative, while the red circles *converge* to it.
 
 
-## 4. Integrals
+## 1. Integrals
 Now that we've become master derivators, let's tackle another calculus friend: the integral.
 ```
 f(x) = 1 + x^2
@@ -90,3 +90,9 @@ When evaluating between the upper and lower limits we get
 true_area = 140/3 =(aprox) 46.666667
 ```
 
+## 1. Taylor's theorem
+Find the polinomic Taylor approximation of orders 1, 2, 3, 4 and 5 for
+```
+f(x) = cos(x)
+```
+For X0 = 0 and X0 = 2
