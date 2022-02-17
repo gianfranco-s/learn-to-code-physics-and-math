@@ -3,22 +3,22 @@
 So you're studying a STEM field, and want to test your theory. What better place to start than a simulation?
 That's what this repo is all about.
 
-We'll essentially start learning how to use code to evaluate some mathematical expressions. We'll go first through some basic Math, and then try to apply the concepts to some Physics problems.
+We'll essentially start learning how to use code to evaluate some mathematical expressions. We'll first go through some basic Math, and then try to apply the concepts to some Physics problems.
 
-Many universities nowadays utilize MATLAB (or its open source counterpart, Octave); they both share most code capabilities. However, we'll also introduce Python code to solve the same problems.
+Many universities utilize MATLAB (or its open source counterpart, Octave). Both are very similar. However, we'll also introduce Python code to solve the same problems.
 
 
 ## 1. Let's plot a sine wave
 
 
 ## 2. Do you know what a derivative is?
-You might be thinking about a weird calculus limit. That's okay, but let's get the Physics angle. Supose a car's position is described as
+You might be thinking about a weird calculus limit. That's okay, but let's get the Physics angle. Suppose a car's position is described as
 ```
 x(t) = t^3
 ```
-Why? Well, because not every movement is a Uniformly Varied.
+Why? Well, because not every movement has uniform acceleration.
 
-How would you describe that car's velocity? This concept requires us to compare between two instants: the "now" -let's call it *t*, and the "future" -let's call it *t+dt*. Note that the "future" is the "now" plus some short interval. To calculate the velocity, we'll need to compute where the car will be in the future with respect to where it is now:
+How would you describe the car's velocity? This concept requires us to compare two instants: the "now" -let's call it *t*, and the "future" -let's call it *t+dt*. Note that the "future" is the "now" plus a short interval *dt*. To calculate the velocity, we'll need to compute where the car will be in the future with respect to where it is now, the distance:
 ```
 x(t+dt) - x(t)
 ```
@@ -27,7 +27,7 @@ We also want to calculate how long it took to get from the "now" to the "future"
 (t+dt)-(t) = dt
 ```
 
-Finally the velocity is calculated as follows:
+Finally the velocity is calculated as distance over time:
 ```
 v = [ x(t+dt) - x(t) ] / dt
 ```
@@ -56,7 +56,7 @@ Now let's find an expression for the numerical derivative. As it turns out, we a
 f'(t) = (approx) [ f(t+dt) - f(t) ] / dt
 ```
 
-This becomes truer, the tinier *dt* gets -effectively arriving to the deffinition of a mathematical limit.
+This becomes truer, the tinier *dt* gets -effectively arriving to the definition of a mathematical limit.
 
 **But what about symbolic derivatives?** you might be asking your self. We're getting there.
 
@@ -91,7 +91,7 @@ true_area = 140/3 =(aprox) 46.666667
 ```
 
 ## 5. Integrals
-Find the polinomic Taylor approximation of orders 1, 2, 3, 4 and 5 for
+Find the polynomic Taylor approximation of orders 1, 2, 3, 4 and 5 for
 ```
 f(x) = cos(x)
 ```
